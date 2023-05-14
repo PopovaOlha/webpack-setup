@@ -6,7 +6,9 @@
   "scripts": {
     "start": "webpack --mode=development",
     "dev": "webpack-dev-server --mode=development",
-    "prod": "webpack --mode=production"
+    "prod": "webpack --mode=production",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "keywords": [],
   "author": "",
@@ -28,6 +30,7 @@
     "webpack-dev-server": "^4.15.0"
   },
   "dependencies": {
-    "core-js": "^3.30.2"
+    "core-js": "^3.30.2",
+    "gh-pages": "^5.0.0"
   }
 }
