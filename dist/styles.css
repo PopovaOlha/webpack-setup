@@ -1,14 +1,1 @@
-/*!***********************************************************************************************************!*\
-  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./scss/common.scss ***!
-  \***********************************************************************************************************/
-.grid {
-  height: 400px;
-  width: 400px;
-  display: flex;
-  flex-wrap: wrap;
-  background-color: rgb(184, 178, 178);
-}
-.grid .cell {
-  height: 40px;
-  width: 40px;
-}
+.grid{height:400px;width:400px;display:flex;flex-wrap:wrap;background-color:#b8b2b2}.grid .cell{height:40px;width:40px}
