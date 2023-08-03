@@ -1,11 +1,12 @@
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const EslingPlugin = require('eslint-webpack-plugin');
 const WebpackBar = require('webpackbar');
 const paths = require('./paths');
 
 module.exports = {
-  entry: [paths.src + '/index.js'],
+  entry: [paths.src + '/index'],
   output: {
     path: paths.dist,
     filename: '[name].bundle.js',
@@ -16,6 +17,9 @@ module.exports = {
       {
         test: /\.js$/,
         use: ['babel-loader'],
+      },
+      { test: /\.ts$/i,
+       use: 'ts-loader' 
       },
       {
         test: /\.(?:ico|gif|png|jpg|jpeg)$/i,
@@ -34,6 +38,9 @@ module.exports = {
   plugins: [
     new CleanWebpackPlugin(),
     new WebpackBar(),
+    new EslingPlugin({
+       extensions: 'ts'
+       }),
     new CopyWebpackPlugin({
       patterns: [
         {
@@ -53,6 +60,6 @@ module.exports = {
   ],
   resolve: {
     modules: [paths.src, 'node_modules'],
-    extensions: ['.js', '.json'],
+    extensions: ['.ts', '.js'],
   },
 };
